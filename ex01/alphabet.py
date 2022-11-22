@@ -18,9 +18,8 @@ def shutudai():
     print("表示文字\n"+" ".join(after_moji))
 
 def kaitou():
-    n=1 #ループを止めるスイッチ
     global count
-
+    n=1 #ループを止めるスイッチ
     while n==1:
         #文字列の生成～出題
         genemoji(random.randint(3,8))
@@ -47,6 +46,6 @@ def kaitou():
                     n=0
                     break
         continue
-    
+
 if __name__=="__main__":
     main()
