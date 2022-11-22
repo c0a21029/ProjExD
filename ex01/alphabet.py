@@ -26,9 +26,7 @@ def kaitou():
         genemoji(random.randint(3,8))
         shutudai()
         print(len(kessonmoji))
-
-        ans1=input("欠損文字はいくつあるでしょうか?\n")
-        
+        ans1=input("欠損文字はいくつあるでしょうか?\n")       
         #文字数の判定
         if ans1 != str(len(kessonmoji)):
             print("不正解です、またチャレンジしてください")
