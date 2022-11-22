@@ -47,7 +47,6 @@ def kaitou():
                     n=0
                     break
         continue
-                
-        
+    
 if __name__=="__main__":
     main()
