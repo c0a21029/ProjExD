@@ -17,6 +17,7 @@ def shutudai():
     print("欠損文字\n"+" ".join(kessonmoji))
     print("表示文字\n"+" ".join(after_moji))
 
+
 def kaitou():
     global count
     n=1 #ループを止めるスイッチ
