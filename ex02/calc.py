@@ -6,7 +6,7 @@ root.geometry("300x500")
 
 def Button_click(event):
     txt=event.widget["text"]
-    tkm.showinfo("押すな",str(txt)+"のボタンがクリックされました")
+    entry.insert(tk.END,txt)
 
 #練習ボタン
 c=1;k=0
