@@ -64,7 +64,7 @@ for i in ope2:
     c+=1
 
 #追加機能(Wowボタン)
-button=tk.Button(root,text="Wow",width=4,font=("",30),bg="red")
+button=tk.Button(root,text="Wow",width=4,font=("",29),bg="red",fg="blue")
 button.bind("<1>",God_func)
 button.bind("<Enter>",Change_cl)
 button.bind("<Leave>",Re_cl)
