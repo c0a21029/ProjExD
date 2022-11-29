@@ -14,21 +14,35 @@ def Button_click(event):
     else:
         entry.insert(tk.END,txt)
 
+#背景色を変更
+def Change_cl(event):
+    event.widget["bg"]="lightblue"
+
+def Re_cl(event):
+    event.widget["bg"]="white"
+
 #練習ボタン
 c=1;k=0
-for i in range(9,-1,-1):
-    button=tk.Button(root,text=i,width=4,height=2,font=("",30))
+for i in range(8,-1,-1):
+    button=tk.Button(root,text=3*(3-c)+k+1,width=4,height=2,font=("",30))
     button.bind("<1>",Button_click)
+    button.bind("<Enter>",Change_cl)
+    button.bind("<Leave>",Re_cl)
     button.grid(row=c,column=k)
     k+=1
     if k%3==0:
         c+=1
         k=0
+
+button=tk.Button(root,text="a",width=4,height=2,font=("",30))
+button.grid(row=1,column=4)
 #記号
-ope=["+","="]
+ope=["+",0,"="]
 for i in ope:
         button=tk.Button(root,text=i,width=4,height=2,font=("",30))
         button.bind("<1>",Button_click)
+        button.bind("<Enter>",Change_cl)
+        button.bind("<Leave>",Re_cl)
         button.grid(row=c,column=k)
         k+=1
 
