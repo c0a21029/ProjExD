@@ -6,7 +6,13 @@ root.geometry("300x500")
 
 def Button_click(event):
     txt=event.widget["text"]
-    entry.insert(tk.END,txt)
+    if txt=="=":
+        num=entry.get()
+        res=eval(num)
+        entry.delete(0,tk.END)
+        entry.insert(tk.END,res)
+    else:
+        entry.insert(tk.END,txt)
 
 #練習ボタン
 c=1;k=0
@@ -22,6 +28,7 @@ for i in range(9,-1,-1):
 ope=["+","="]
 for i in ope:
         button=tk.Button(root,text=i,width=4,height=2,font=("",30))
+        button.bind("<1>",Button_click)
         button.grid(row=c,column=k)
         k+=1
 
