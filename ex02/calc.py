@@ -2,7 +2,7 @@ import tkinter as tk
 import tkinter.messagebox as tkm
 
 root=tk.Tk()
-root.geometry("400x500")
+root.geometry("380x500")
 
 #クリック時の挙動
 def Button_click(event):
@@ -20,7 +20,17 @@ def Change_cl(event):
     event.widget["bg"]="lightblue"
 
 def Re_cl(event):
-    event.widget["bg"]="white"
+    if event.widget["text"]!="Wow":
+        event.widget["bg"]="white"
+    else:
+        event.widget["bg"]="red"
+   
+
+#追加機能
+def God_func(event):
+    for i in range(100,-1,-1):
+        if i >=1:
+            tkm.showwarning("警告",f"ﾄﾞｩﾜァ…あと{i}回消してね")
 
 #ボタン
 c=1;k=0
@@ -36,7 +46,7 @@ for i in range(8,-1,-1):
         k=0 
 
 #記号
-ope=["%",0,"."]
+ope=["/",0,"."]
 ope2=["*","-","+","="]
 for i in ope:
         button=tk.Button(root,text=i,width=4,height=2,font=("",30))
@@ -55,8 +65,8 @@ for i in ope2:
         c+=1
 
 #追加機能
-button=tk.Button(root,text="tes",width=4,font=("",30))
-button.bind("<1>",Button_click)
+button=tk.Button(root,text="Wow",width=4,font=("",30),bg="red")
+button.bind("<1>",God_func)
 button.bind("<Enter>",Change_cl)
 button.bind("<Leave>",Re_cl)
 button.grid(row=0,column=4)
