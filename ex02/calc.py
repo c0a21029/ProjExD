@@ -48,20 +48,20 @@ for i in range(8,-1,-1):
 ope=["/",0,"."]
 ope2=["*","-","+","="]
 for i in ope:
-        button=tk.Button(root,text=i,width=4,height=2,font=("",30))
-        button.bind("<1>",Button_click)
-        button.bind("<Enter>",Change_cl)
-        button.bind("<Leave>",Re_cl)
-        button.grid(row=c,column=k)
-        k+=1
+    button=tk.Button(root,text=i,width=4,height=2,font=("",30))
+    button.bind("<1>",Button_click)
+    button.bind("<Enter>",Change_cl)
+    button.bind("<Leave>",Re_cl)
+    button.grid(row=c,column=k)
+    k+=1
 c=1
 for i in ope2:
-        button=tk.Button(root,text=i,width=4,height=2,font=("",30))
-        button.bind("<1>",Button_click)
-        button.bind("<Enter>",Change_cl)
-        button.bind("<Leave>",Re_cl)
-        button.grid(row=c,column=4)
-        c+=1
+    button=tk.Button(root,text=i,width=4,height=2,font=("",30))
+    button.bind("<1>",Button_click)
+    button.bind("<Enter>",Change_cl)
+    button.bind("<Leave>",Re_cl)
+    button.grid(row=c,column=4)
+    c+=1
 
 #追加機能(Wowボタン)
 button=tk.Button(root,text="Wow",width=4,font=("",30),bg="red")
