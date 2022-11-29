@@ -25,14 +25,13 @@ def Re_cl(event):
     else:
         event.widget["bg"]="red"
    
-
-#追加機能
+#追加機能(Wowボタン)
 def God_func(event):
     for i in range(100,-1,-1):
         if i >=1:
             tkm.showwarning("警告",f"ﾄﾞｩﾜァ…あと{i}回消してね")
 
-#ボタン
+#ボタン(数字)
 c=1;k=0
 for i in range(8,-1,-1):
     button=tk.Button(root,text=3*(3-c)+k+1,width=4,height=2,font=("",30))
@@ -64,14 +63,16 @@ for i in ope2:
         button.grid(row=c,column=4)
         c+=1
 
-#追加機能
+#追加機能(Wowボタン)
 button=tk.Button(root,text="Wow",width=4,font=("",30),bg="red")
 button.bind("<1>",God_func)
 button.bind("<Enter>",Change_cl)
 button.bind("<Leave>",Re_cl)
 button.grid(row=0,column=4)
+
 #入力欄
 entry=tk.Entry(root,justify="right",width=10,font=("",40))
 entry.grid(row=0,column=0,columnspan=4)
 
+#いつもの
 root.mainloop()
