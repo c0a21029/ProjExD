@@ -12,7 +12,7 @@ def key_up(event):
     key=""
 
 def main_proc():
-    #時間表示
+    #時間の表示
     time_c()
     #移動
     global cx,cy,mx,my
