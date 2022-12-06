@@ -41,8 +41,8 @@ def main_proc():
 def time_c():
     canv.create_rectangle(1100, 0, 1500, 100, fill="pink")
     time2=time.time()
-    time_now=str(round(time2-time_start, 1))
-    canv.create_text(1300, 50, text=time_now+" 秒", font=("", 60))
+    time_now=round(time2-time_start, 1)
+    canv.create_text(1300, 50, text=str(time_now)+" 秒", font=("", 60))
 
 if __name__=="__main__":
     #ウィンドウ生成
