@@ -27,30 +27,30 @@ def main_proc():
         if key == "Right":mx-=1
         if key == "Left":mx+=1
     cx,cy=mx*100+50,my*100+50
-    canv.coords("hato",cx,cy)
+    canv.coords("hato", cx,cy)
     #ゴール判定
     if mx==13 and my==7:
         time_end=time.time()
-        total_time=str(round(time_end-time_start,2))      #タイム取得
+        total_time=str(round(time_end-time_start, 2))      #タイム取得
         tkm.showinfo("クリア", f"！！！！！ゴーーーーーーール！！！！！\nクリアタイム：{total_time}秒")
         root.after_cancel(jid)
 
-    jid=root.after(100,main_proc)
+    jid=root.after(100, main_proc)
         
 #現在のタイムを表示        
 def time_c():
     canv.create_rectangle(1100, 0, 1500, 100, fill="pink")
     time2=time.time()
-    time_now=str(round(time2-time_start,1))
-    canv.create_text(1300,50,text=time_now+" 秒",font=("",60))
+    time_now=str(round(time2-time_start, 1))
+    canv.create_text(1300, 50, text=time_now+" 秒", font=("", 60))
 
 if __name__=="__main__":
     #ウィンドウ生成
     root=tk.Tk()
     root.title("迷えるこうかとん")
-    canv=tk.Canvas(root,width=1500,height=900,bg="black")
+    canv=tk.Canvas(root, width=1500, height=900, bg="black")
     #迷路生成
-    maze_lst=mm.make_maze(15,9)
+    maze_lst=mm.make_maze(15, 9)
     mm.show_maze(canv,maze_lst)
     canv.create_rectangle(100, 100, 200, 200, fill="blue")    #スタート地点の色
     canv.create_rectangle(1300, 700, 1400, 800, fill="red")    #ゴールの色
@@ -58,13 +58,13 @@ if __name__=="__main__":
     tori=tk.PhotoImage(file="fig/8.png")
     mx,my=1,1
     cx,cy=mx*100+50,my*100+50
-    canv.create_image(cx,cy,image=tori,tag="hato")
+    canv.create_image(cx, cy, image=tori, tag="hato")
     canv.pack()
     #時間計測開始
     time_start=time.time()
 
     key=""
-    root.bind("<KeyPress>",key_down)
-    root.bind("<KeyRelease>",key_up)
+    root.bind("<KeyPress>", key_down)
+    root.bind("<KeyRelease>", key_up)
     main_proc()
     root.mainloop()
