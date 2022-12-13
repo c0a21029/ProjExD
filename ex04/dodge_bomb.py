@@ -16,6 +16,7 @@ def retry():
             if event.type == pg.QUIT: return    #これがないと閉じれない
             if event.type == pg.KEYDOWN and event.key == pg.K_r:    #rでmain()を再起動する
                 main()
+                return
                 
 def main():
     #時間
