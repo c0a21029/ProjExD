@@ -16,7 +16,7 @@ def retry():
             if event.type == pg.QUIT: return    #これがないと閉じれない
             if event.type == pg.KEYDOWN and event.key == pg.K_r:    #rでmain()を再起動する
                 main()
-                return
+                
 def main():
     #時間
     clock = pg.time.Clock()
@@ -45,8 +45,7 @@ def main():
     bomb_rct.centerx = random.randint(0, scrn_rct.width)
     bomb_rct.centery = random.randint(0, scrn_rct.height)
 
-    vx, vy = +1, +1 #跳ね返りの変数
-    life = 2 #体力
+    vx, vy, life = 1, 1, 2 #跳ね返りの変数と体力
     #ループ開始地点
     while True:
         scrn_sfc.blit(back_sfc, back_rct)
