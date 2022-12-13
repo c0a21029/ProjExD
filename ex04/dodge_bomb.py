@@ -52,7 +52,8 @@ def main():
         scrn_sfc.blit(back_sfc, back_rct)
         scrn_sfc.blit(message, (350,0))
         for event in pg.event.get():
-            if event.type == pg.QUIT: return
+            if event.type == pg.QUIT:
+                return
         #鳥移動
         dex = 1 #移動速度の変数
         key_dct = pg.key.get_pressed() # 辞書型
