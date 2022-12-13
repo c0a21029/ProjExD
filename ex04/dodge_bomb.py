@@ -78,9 +78,13 @@ def main():
                 tori_rct.centerx += dex
             if key_dct[pg.K_RIGHT]:
                 tori_rct.centerx -= dex
+            
         scrn_sfc.blit(tori_sfc, tori_rct) 
         #爆弾移動
         yoko, tate = check_bound(bomb_rct, scrn_rct)
+        if check_bound(bomb_rct, scrn_rct) != (1, 1):
+            vx+=0.5
+            vy+=0.5
         vx*=yoko ; vy*=tate
         bomb_rct.move_ip(vx, vy)
         scrn_sfc.blit(bomb_sfc, bomb_rct)  
