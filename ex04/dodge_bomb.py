@@ -83,8 +83,8 @@ def main():
         #爆弾移動
         yoko, tate = check_bound(bomb_rct, scrn_rct)
         if check_bound(bomb_rct, scrn_rct) != (1, 1):
-            vx+=0.5
-            vy+=0.5
+            vx*=1.2
+            vy*=1.2
         vx*=yoko ; vy*=tate
         bomb_rct.move_ip(vx, vy)
         scrn_sfc.blit(bomb_sfc, bomb_rct)  
