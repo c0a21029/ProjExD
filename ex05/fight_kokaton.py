@@ -66,6 +66,28 @@ class Bomb:
         self.blit(scr)
 
 
+#挙動の異なる爆弾
+class Bomb2:
+    def __init__(self, color, rad, vxy, scr:Screen):
+        self.sfc = pg.Surface((2*rad, 2*rad)) # 正方形の空のSurface
+        self.sfc.set_colorkey((0, 0, 0))
+        pg.draw.circle(self.sfc, color, (rad, rad), rad)
+        self.rct = self.sfc.get_rect()
+        self.rct.centerx = random.randint(0, scr.rct.width)
+        self.rct.centery = random.randint(0, scr.rct.height)
+        self.vx = random.randint(1,10)
+        self.vy = random.randint(1,3)
+
+    def blit(self, scr:Screen):
+        scr.sfc.blit(self.sfc, self.rct)
+
+    def update(self, scr:Screen):
+        self.rct.move_ip(self.vx, self.vy)
+        yoko, tate, up_speed = check_bound(self.rct, scr.rct)
+        self.vx *= yoko * up_speed
+        self.vy *= tate * up_speed
+        self.blit(scr)
+
 
 def check_bound(obj_rct, scr_rct):
     """
@@ -101,6 +123,12 @@ def main():
         vx = random.choice([-1, +1])
         vy = random.choice([-1, +1])
         bkd_lis.append(Bomb((255, 0, 0), 10, (vx, vy), scr))
+
+    bkd_lis2 = []
+    for i in range(1):
+        vx = random.choice([-1, +1])
+        vy = random.choice([-1, +1])
+        bkd_lis.append(Bomb2((25, 250, 110), 50, (vx, vy), scr))
     
     life=3
     while True:        
