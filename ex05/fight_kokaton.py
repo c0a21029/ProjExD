@@ -131,6 +131,7 @@ def main():
         bkd_lis.append(Bomb2((25, 250, 110), 50, (vx, vy), scr))
     
     life=3
+    
     while True:        
         scr.blit()
 
