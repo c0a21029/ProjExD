@@ -148,11 +148,11 @@ def main():
                     kkt.rct.center = 900, 400
                     kkt.sfc = pg.image.load("fig/8.png")
                     kkt.sfc = pg.transform.rotozoom(kkt.sfc, 0, 1.8)
-                if life == 2: #2度目の接触判定
+                elif life == 2: #2度目の接触判定
                     kkt.rct.center = 900, 400
                     kkt.sfc = pg.image.load("fig/2.png")
                     kkt.sfc = pg.transform.rotozoom(kkt.sfc, 0, 1.8)
-                if life == 1: #3度目の接触判定
+                else: #3度目の接触判定
                     return
                 bkd_lis.append(Bomb((255, 0, 0), 10, (vx, vy), scr))
                 life -= 1
