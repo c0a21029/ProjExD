@@ -130,8 +130,7 @@ def main():
         vy = random.choice([-1, +1])
         bkd_lis.append(Bomb2((25, 250, 110), 50, (vx, vy), scr))
     
-    life=3
-    
+    life = 3
     while True:        
         scr.blit()
 
