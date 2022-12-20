@@ -75,8 +75,8 @@ class Bomb2:
         self.rct = self.sfc.get_rect()
         self.rct.centerx = random.randint(0, scr.rct.width)
         self.rct.centery = random.randint(0, scr.rct.height)
-        self.vx = random.randint(1,10)
-        self.vy = random.randint(1,3)
+        self.vx = random.randint(1,5)
+        self.vy = random.randint(1,5)
 
     def blit(self, scr:Screen):
         scr.sfc.blit(self.sfc, self.rct)
