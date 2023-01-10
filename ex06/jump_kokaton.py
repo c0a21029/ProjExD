@@ -128,7 +128,7 @@ def main():
 
 if __name__ == "__main__":
     game = True
-    pg.init() # 初期化
+    pg.init() #初期化
     while game:
         main() # ゲームの本体
     pg.quit() # 初期化の解除
