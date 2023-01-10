@@ -1,6 +1,6 @@
 import pygame as pg
 import random
-import time #追加部分
+import time #鍵和田崇允：追加部分
 import sys
 
 
@@ -26,9 +26,9 @@ class Bird:#こうかとんを生成
         self.sfc = pg.transform.flip(self.sfc, True, False) #向きを反転
         self.rct = self.sfc.get_rect()
         self.rct.center = center
-        self.arrive_time = time.time()  #追加部分　時間の計測用、なぜかメイン関数内で処理できなかったのでこちらで代用
+        self.arrive_time = time.time()  #鍵和田崇允：追加部分　時間の計測用、なぜかメイン関数内で処理できなかったのでこちらで代用
 
-    def timecount(self):  #追加部分　生存時間を返す
+    def timecount(self):  #鍵和田崇允：追加部分　生存時間を返す
         time_dead = time.time()
         time_str = str(round(time_dead - self.arrive_time, 1))
         return time_str
@@ -60,7 +60,7 @@ class Wall:
         self.rct1.center = (1550, self.top * 50)
         self.rct2 = self.sfc2.get_rect() 
         self.rct2.center = (1550, 600 + self.top * 50)
-        self.pass_sitayo = True #追加部分（点数計算が重複しないようにするフラグ）
+        self.pass_sitayo = True #鍵和田崇允：追加部分（点数計算が重複しないようにするフラグ）
 
     def blit(self, scr):
         scr.sfc.blit(self.sfc1, self.rct1)
@@ -75,7 +75,7 @@ class Wall:
 def main():
     global game
     time = 0
-    score = 0 #追加部分　壁を越えた回数
+    score = 0 #鍵和田崇允：追加部分　壁を越えた回数
     clock =pg.time.Clock()
 
     scr = Screen("飛べ！こうかとん", (1600, 900), "fig/pg_bg.jpg")
@@ -108,13 +108,13 @@ def main():
             if kkt.rct.colliderect(wll.rct1) or kkt.rct.colliderect(wll.rct2):
                 return
             
-            if kkt.rct.centerx > wll.rct1.right and wll.pass_sitayo:   #追加部分（ここから下2行）　スコアを増やす
+            if kkt.rct.centerx > wll.rct1.right and wll.pass_sitayo:   #鍵和田崇允：追加部分（ここから下2行）　スコアを増やす
                 score += 1
                 wll.pass_sitayo = False #重複計算回避
                 
         if kkt.rct.bottom > scr.rct.bottom:
             return
-        #追加部分 時間表示+スコア表示
+        #鍵和田崇允：追加部分 時間表示+スコア表示
         fonto = pg.font.Font(None, 80)
         time_str = fonto.render("Time:"+kkt.timecount(), True, (0, 0, 0))
         scr.sfc.blit(time_str, (1300, 0))
