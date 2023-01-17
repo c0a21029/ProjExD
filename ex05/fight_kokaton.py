@@ -68,6 +68,8 @@ class Bomb:
         self.blit(scr)
 
 
+
+
 #挙動の異なる爆弾
 class Bomb2:
     def __init__(self, color, rad, vxy, scr:Screen):
@@ -102,10 +104,10 @@ def check_bound(obj_rct, scr_rct):
 
     if obj_rct.left < scr_rct.left or scr_rct.right < obj_rct.right:
         yoko = -1
-        up_speed =1.2
+        up_speed =1.0
     if obj_rct.top < scr_rct.top or scr_rct.bottom < obj_rct.bottom:
         tate = -1
-        up_speed = 1.2
+        up_speed = 1.0
 
     return yoko, tate, up_speed
 

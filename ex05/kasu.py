@@ -46,9 +46,9 @@ class Bird:
             self.rct.centery -= self.vy + self.jump_num
         #上昇力を減らす
         if self.jump_num < 0:
-            self.jump_num %= 2
-        else:
-            self.j_lock = True
+            self.jump_num += 1
+            if self.vy + self.jump_num <= 0:
+                self.j_lock = True
 
         self.blit(scr)                    
 
